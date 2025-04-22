@@ -17,3 +17,18 @@ def split_nodes_delimiter(old_nodes:list[TextNode], delimiter:str, text_type:Tex
                 else:
                     new_nodes.append(TextNode(text_block, text_type))
     return new_nodes
+
+import re
+def extract_markdown_images(text):
+    pattern = r'!\[([^\]]*)\]\(([^)]+)\)'
+    return re.findall(pattern, text)
+
+def extract_markdown_link(text):
+    pattern = r'\[([^\]]+)\]\(([^)]+)\)'
+    return re.findall(pattern, text)
+
+
+if __name__ == "__main__":
+    text = "This is text with a ![rick roll](https://i.imgur.com/aKaOqIh.gif) and ![obi wan](https://i.imgur.com/fJRm4Vk.jpeg)"
+    images = extract_markdown_images(text)
+    print(images)
