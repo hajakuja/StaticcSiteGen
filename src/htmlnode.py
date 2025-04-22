@@ -48,8 +48,6 @@ class ParentNode(HTMLNode):
 
 
 
-
-
 def main():
     def assertEqual(one, two):
         if one == two:
