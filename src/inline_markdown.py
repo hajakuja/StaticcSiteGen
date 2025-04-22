@@ -10,6 +10,8 @@ def split_nodes_delimiter(old_nodes:list[TextNode], delimiter:str, text_type:Tex
             if len(splitt) % 2 != 1:
                 raise ValueError(f"invalid Markdown passed, delimiter: {delimiter} wasn't closed")
             for index,text_block in enumerate(splitt):
+                if text_block == "":
+                    continue
                 if index%2 == 0:
                     new_nodes.append(TextNode(text_block, TextType.TEXT))
                 else:
