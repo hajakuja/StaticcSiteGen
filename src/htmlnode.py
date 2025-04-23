@@ -22,7 +22,7 @@ class LeafNode(HTMLNode):
         super().__init__(tag, value, None, props)
     
     def to_html(self):
-        html_str = ""
+        html_str = " "
         if self.value is None:
             raise ValueError
         if self.tag is None:

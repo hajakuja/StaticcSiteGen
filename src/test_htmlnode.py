@@ -13,3 +13,5 @@ class TestHTMLNode(unittest.TestCase):
         # print(node.props_to_html())
         self.assertEqual(node.props_to_html(), "")
 
+if __name__ == "__main__":
+    unittest.main()
