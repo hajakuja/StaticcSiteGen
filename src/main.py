@@ -8,7 +8,7 @@ import sys
 
 
 dir_path_static = "./static"
-dir_path_public = "./public"
+dir_path_public = "./docs"
 
 
 def main():
@@ -21,6 +21,6 @@ def main():
         basepath = sys.argv[1]
     print("Copying static files to public directory...")
     copy_files_recursive(dir_path_static, dir_path_public)
-    generate_pages_recursive("./content", "template.html", "./public", basepath)
+    generate_pages_recursive("./content", "template.html", dir_path_public, basepath)
 
 main()
